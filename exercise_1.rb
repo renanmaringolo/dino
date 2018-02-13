@@ -35,7 +35,7 @@ puts(sobrenome) # deve ser Proenca, nao pode mudar!
 
 # seu codigo aqui
 def soma(n1, n2)
-  n1.+(n2)
+  n1 + n2
 end
 
 soma(1, 2)
