@@ -7,7 +7,7 @@ nome = 'Renan'
 sobrenome = 'Proenca'
 
 # seu codigo aqui, use o metodo puts para imprimir o nome completo
-puts('nome' + 'sobrenome')
+puts('Renan' + ' Proenca')
 
 ###### NAO MEXER #######
 puts(nome) # deve ser Renan, nao pode mudar!
@@ -17,12 +17,13 @@ puts(sobrenome) # deve ser Proenca, nao pode mudar!
 # 2) Imprima o nome completo MODIFICANDO o valor da string original
 ######
 
-nome = 'Renan'
+nome = 'Renan Proenca'
 sobrenome = ' Proenca'
 
 # seu codigo aqui, use o metodo puts para imprimir o nome completo
-nome <<  sobrenome
-puts(nome())
+nome <<  ' Proenca'
+puts(nome)
+
 
 ###### NAO MEXER #######
 puts(nome) # deve ser Renan Proenca
@@ -33,20 +34,16 @@ puts(sobrenome) # deve ser Proenca, nao pode mudar!
 ######
 
 # seu codigo aqui
-def nome()
- 'Renan Proenca'
+def soma()
+1.+(1)
 end
 
-def sobrenome
-' Proenca'
+def soma()
+2.+(1)
 end
-
-'Renan Proenca' .+('Proenca')
-
-
+ 
 
 
 ###### NAO MEXER #######
 puts soma(1, 2) # deve ser 3
 
-1.+(2)
