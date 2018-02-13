@@ -7,7 +7,7 @@ nome = 'Renan'
 sobrenome = 'Proenca'
 
 # seu codigo aqui, use o metodo puts para imprimir o nome completo
-puts("Renan, #{sobrenome}")
+puts("#{nome}, #{sobrenome}")
 
 ###### NAO MEXER #######
 puts(nome) # deve ser Renan, nao pode mudar!
