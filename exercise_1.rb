@@ -7,7 +7,7 @@ nome = 'Renan'
 sobrenome = 'Proenca'
 
 # seu codigo aqui, use o metodo puts para imprimir o nome completo
-puts('Renan' + ' Proenca')
+puts("Renan, #{sobrenome}")
 
 ###### NAO MEXER #######
 puts(nome) # deve ser Renan, nao pode mudar!
@@ -35,14 +35,10 @@ puts(sobrenome) # deve ser Proenca, nao pode mudar!
 
 # seu codigo aqui
 def soma()
-1.+(1)
+1.+(2)
 end
 
-def soma()
-2.+(1)
-end
- 
-
+puts(soma())
 
 ###### NAO MEXER #######
 puts soma(1, 2) # deve ser 3
