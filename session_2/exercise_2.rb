@@ -1,5 +1,19 @@
 # Crie um array de nomes, com 5 elementos, e imprima uma mensagem de boas-vindas
 # pra cada nome.
+nomes = ['Leandro', 'Renan', 'Mara', 'Mike', 'Safira']
+
+posicao = 0
+nome = nomes[posicao]
+
+
+while nome != nil do
+  puts "Seja vem-vindo, #{nome}" 
+  posicao = posicao + 1
+  nome = nomes[posicao]
+end    
+
+
+
 
 ###### Resultado esperado #######
 
