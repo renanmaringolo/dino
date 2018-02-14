@@ -2,18 +2,13 @@
 # pra cada nome.
 nomes = ['Leandro', 'Renan', 'Mara', 'Mike', 'Safira']
 
-posicao = 0
-nome = nomes[posicao]
 
 
 for nome in nomes
   puts "Seja vem-vindo, #{nome}" 
-  posicao = posicao + 1
-  nome = nomes[posicao]
-end    
+end         
 
 ## Opção2
-
 ## while nome != nil do
 ##  puts "Seja Bem-vindo, #{nome}"
 ##  posicao = posicao + 1
@@ -29,4 +24,4 @@ end
 # Seja bem-vindo, Mike
 # Seja bem-vindo, Safira
 
-#################################
+
