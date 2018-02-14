@@ -6,7 +6,7 @@ posicao = 0
 nome = nomes[posicao]
 
 
-while nome != nil do
+for nome in nomes
   puts "Seja vem-vindo, #{nome}" 
   posicao = posicao + 1
   nome = nomes[posicao]
