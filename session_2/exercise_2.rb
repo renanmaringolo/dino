@@ -12,7 +12,13 @@ for nome in nomes
   nome = nomes[posicao]
 end    
 
+## Opção2
 
+## while nome != nil do
+##  puts "Seja Bem-vindo, #{nome}"
+##  posicao = posicao + 1
+##  nome = nomes[posicao
+## end
 
 
 ###### Resultado esperado #######
