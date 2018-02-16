@@ -19,6 +19,17 @@ end
 
 media = soma / total_de_provas
 
+
+
+if media >= 5 
+  puts "Aluno aprovado"
+
+else
+  puts "Aluno reprovado"
+
+
+
+end
   
 puts "A média é #{media}"
 
