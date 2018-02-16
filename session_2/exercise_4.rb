@@ -5,9 +5,9 @@
 # Exemplos: 
 # (5 + 5 + 5 + 5) / 4 = 5
 # (8 + 6 + 8 + 10) / 4 = 8
-total_de_provas = 4
-notas = [8, 6, 8, 10]
+notas = [8, 6, 8, 10, 7, 4, 3, 9, 8]
 soma = 0
+posicao = 0
 
 # implemente a lógica aqui
 
@@ -16,8 +16,19 @@ for nota in notas
 
 end
 
+for cont in notas
+  posicao = posicao + 1
 
-media = soma / total_de_provas
+end
+
+
+def calcula_media(soma, cont)
+  soma / cont
+end
+
+media = calcula_media(soma, cont)
+
+
 
 ######## implementação de lógica Renan
 
