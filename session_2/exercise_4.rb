@@ -13,20 +13,15 @@ posicao = 0
 
 for nota in notas
   soma = soma + nota
+  posicao = posicao + 1
 
 end
 
-  for cont in notas
-    posicao = posicao + 1
-
+  def calcula_media(soma, nota)
+    soma / nota
   end
 
-
-  def calcula_media(soma, cont)
-    soma / cont
-  end
-
-  media = calcula_media(soma, cont)
+  media = calcula_media(soma, nota)
 
 
 
