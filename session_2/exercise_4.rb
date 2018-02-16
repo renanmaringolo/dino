@@ -16,17 +16,17 @@ for nota in notas
 
 end
 
-for cont in notas
-  posicao = posicao + 1
+  for cont in notas
+    posicao = posicao + 1
 
-end
+  end
 
 
-def calcula_media(soma, cont)
-  soma / cont
-end
+  def calcula_media(soma, cont)
+    soma / cont
+  end
 
-media = calcula_media(soma, cont)
+  media = calcula_media(soma, cont)
 
 
 
