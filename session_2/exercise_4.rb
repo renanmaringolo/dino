@@ -22,16 +22,15 @@ media = soma / total_de_provas
 ######## implementação de lógica Renan
 
 if media >= 5 
-  puts "Aluno aprovado"
+  puts "Aluno aprovado, a média é: #{media}"
 
 else
-  puts "Aluno reprovado"
+  puts "Aluno reprovado, a média é: #{media}"
 
 ###### 
 
 end
   
-puts "A média é #{media}"
 
 #### Resultado esperado ####
 # A média é 8
