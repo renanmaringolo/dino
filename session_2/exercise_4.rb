@@ -19,7 +19,7 @@ end
 
 media = soma / total_de_provas
 
-
+######## implementação de lógica Renan
 
 if media >= 5 
   puts "Aluno aprovado"
@@ -27,7 +27,7 @@ if media >= 5
 else
   puts "Aluno reprovado"
 
-
+###### 
 
 end
   
