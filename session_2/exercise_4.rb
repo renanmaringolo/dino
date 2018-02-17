@@ -5,23 +5,23 @@
 # Exemplos: 
 # (5 + 5 + 5 + 5) / 4 = 5
 # (8 + 6 + 8 + 10) / 4 = 8
-notas = [8, 6, 8, 10, 7, 4, 3, 9, 8]
+notas = [8, 0, 8, 8]
 soma = 0
-posicao = 0
+total = 0
 
 # implemente a lógica aqui
 
 for nota in notas
   soma = soma + nota
-  posicao = posicao + 1
+  total = total + 1
 
 end
 
-  def calcula_media(soma, nota)
-    soma / nota
+  def calcula_media(soma, total)
+    soma / total 
   end
 
-  media = calcula_media(soma, nota)
+  media = calcula_media(soma, total)
 
 
 
