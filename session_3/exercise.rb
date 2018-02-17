@@ -13,7 +13,13 @@ puts '#3 - Extrato'
 puts '#0 - Sair'
 puts
 
-# A partir daqui, vamos elaborar uma série de exercícios incrementais e numerados.
+
+
+
+
+
+
+#A partir daqui, vamos elaborar uma série de exercícios incrementais e numerados.
 # Os dois primeiros exercícios abaixo já estão feitos e servem
 # como base para os próximos exercícios.
 
@@ -25,3 +31,7 @@ print('Escolha uma opção: ')
 opcao = gets.to_i
 
 # 3 - Inicializar a variável 'saldo' com 0. Todo saldo começa com zero.
+
+saldo = 0
+
+
