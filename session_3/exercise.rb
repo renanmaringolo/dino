@@ -34,4 +34,11 @@ opcao = gets.to_i
 
 saldo = 0
 
+# 4 Colocar menu em loop, para fazer com que a opção "0" saia do programa
+
+while opcao != 0 do
+  
+end
+
+  puts "Até logo"  
 
