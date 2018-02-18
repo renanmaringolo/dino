@@ -37,8 +37,11 @@ saldo = 0
 # 4 Colocar menu em loop, para fazer com que a opção "0" saia do programa
 
 while opcao != 0 do
-  
+
+  # 5 - Mostrar o menu, com os prints/puts igual está lá em cima, e no final, atribuir à
+  # variável "opcao" o valor do gets (o gets tem que estar por ultimo dentro do while
+
 end
 
-  puts "Até logo"  
+  puts "Até logo"
 
