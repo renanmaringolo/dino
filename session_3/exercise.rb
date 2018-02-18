@@ -43,6 +43,8 @@ while opcao != 0 do
   puts '#3 - Extrato'
   puts '#0 - Sair'
   puts
+  
+  print('Escolha uma opção: ')
   opcao = gets.to_i  
 
   # 5 - Mostrar o menu, com os prints/puts igual está lá em cima, e no final, atribuir à
