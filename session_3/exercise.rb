@@ -18,7 +18,6 @@ puts
 
 
 
-
 #A partir daqui, vamos elaborar uma série de exercícios incrementais e numerados.
 # Os dois primeiros exercícios abaixo já estão feitos e servem
 # como base para os próximos exercícios.
@@ -37,6 +36,14 @@ saldo = 0
 # 4 Colocar menu em loop, para fazer com que a opção "0" saia do programa
 
 while opcao != 0 do
+  puts '====== BANCO DINOSSAURO ======'
+  puts '## Menu ##'
+  puts '#1 - Depósito'
+  puts '#2 - Saque'
+  puts '#3 - Extrato'
+  puts '#0 - Sair'
+  puts
+  opcao = gets.to_i  
 
   # 5 - Mostrar o menu, com os prints/puts igual está lá em cima, e no final, atribuir à
   # variável "opcao" o valor do gets (o gets tem que estar por ultimo dentro do while
