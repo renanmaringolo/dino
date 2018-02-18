@@ -29,7 +29,7 @@ def chama_menu
   puts '#0 - Sair'
   puts
   
-  print('Escolha uma opção: ')
+  print 'Escolha uma opção: '
   gets.to_i
 end
 
@@ -41,10 +41,24 @@ opcao = chama_menu
 # 4 Colocar menu em loop, para fazer com que a opção "0" saia do programa
 
 while opcao != 0 do
+  if opcao == 1
+    print 'Valor do depósito: '    
+    deposito = gets.to_i
+    saldo = saldo + deposito
+  
+  elsif opcao == 3
+    puts "Seu saldo é: #{saldo}"   
+
+  elsif opcao == 2
+    print 'Valor do saque: '
+    saque = gets.to_i
+    if saldo < saque
+      puts 'Valor insuficiente'
+    else
+      saldo = saldo - saque
+    end
+  end
     
-
-
-
 
 
   opcao = chama_menu
