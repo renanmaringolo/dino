@@ -5,7 +5,7 @@
 # - O extrato mostra o saldo atual
 # - Sair do menu deve fechar o programa
 
-      
+     
 
 #A partir daqui, vamos elaborar uma série de exercícios incrementais e numerados.
 # Os dois primeiros exercícios abaixo já estão feitos e servem
@@ -13,12 +13,9 @@
 
 
 # 1 - Imprimir no screen a mensagem 'Escolha uma opção' (use o print ao inves do puts)
-
-
+time = Time.now
 
 # 2 - Receber do gets a opção digitada e converter para inteiro, atribuind o resultado na variável opcao.
-
-
 
 def chama_menu
   puts '====== BANCO DINOSSAURO ======'
@@ -37,6 +34,8 @@ end
 
 saldo = 0
 opcao = chama_menu
+extratos_saque = []
+extratos_deposito = []
 
 # 4 Colocar menu em loop, para fazer com que a opção "0" saia do programa
 
@@ -45,19 +44,25 @@ while opcao != 0 do
     print 'Valor do depósito: '    
     deposito = gets.to_i
     saldo = saldo + deposito
+    extratos_deposito << deposito
+    puts "Seu depósito é de: #{deposito}"
   
   elsif opcao == 3
-    puts "Seu saldo é: #{saldo}"   
-
+    puts "Depositos realizados nos últimos 30 dias: #{extratos_deposito}"
+    puts "Saques realizados nos últimos 30 dias: #{extratos_saque}"
+    puts "Seu saldo atual é de: #{saldo}"
   elsif opcao == 2
     print 'Valor do saque: '
     saque = gets.to_i
+    extratos_saque << saque
+    puts "Saque realizado de: #{saque}"
     if saldo < saque
       puts 'Valor insuficiente'
     else
       saldo = saldo - saque
     end
   end
+
     
 
 
