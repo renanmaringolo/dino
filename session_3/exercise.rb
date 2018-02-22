@@ -34,9 +34,7 @@ end
 
 saldo = 0
 opcao = chama_menu
-extratos_saque = []
-extratos_deposito = []
-
+movimentos = []
 # 4 Colocar menu em loop, para fazer com que a opção "0" saia do programa
 
 while opcao != 0 do
@@ -44,18 +42,16 @@ while opcao != 0 do
     print 'Valor do depósito: '    
     deposito = gets.to_i
     saldo = saldo + deposito
-    extratos_deposito << deposito
-    puts "Seu depósito é de: #{deposito}"
-  
+    movimentos << "Depósito realizado de: #{deposito}"
+    
   elsif opcao == 3
-    puts "Depositos realizados nos últimos 30 dias: #{extratos_deposito}"
-    puts "Saques realizados nos últimos 30 dias: #{extratos_saque}"
+    puts movimentos
     puts "Seu saldo atual é de: #{saldo}"
   elsif opcao == 2
     print 'Valor do saque: '
     saque = gets.to_i
-    extratos_saque << saque
-    puts "Saque realizado de: #{saque}"
+    movimentos << "Saque realizado de: #{saque}"
+
     if saldo < saque
       puts 'Valor insuficiente'
     else
