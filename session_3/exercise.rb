@@ -74,5 +74,5 @@ end
 
 
 
-  puts "Obrigado por contratar nossos serviços. Dinossauro S/A Bank"
+  puts "Obrigado por contratar nossos serviços. Dinossauro Bank S/A"
 
