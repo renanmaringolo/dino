@@ -31,18 +31,30 @@ def chama_menu
 end
 
 # 3 - Inicializar a variável 'saldo' com 0. Todo saldo começa com zero.
-
 saldo = 0
 opcao = chama_menu
 movimentos = []
+saques = []
+depositos = []
 # 4 Colocar menu em loop, para fazer com que a opção "0" saia do programa
+
+
+# 5 Criar um método e percorrer uma lista com todos os movimentos e fazer com que ela calcula o resultado###
+
+#saldo = soma_depositos(depositos) - soma_saques(saques) ? continuar
+
+  
+
+
 
 while opcao != 0 do
   if opcao == 1
     print 'Valor do depósito: '    
     deposito = gets.to_i
     saldo = saldo + deposito
+    depositos << deposito 
     movimentos << "Depósito realizado de: #{deposito}"
+
     
   elsif opcao == 3
     puts movimentos
@@ -50,8 +62,9 @@ while opcao != 0 do
   elsif opcao == 2
     print 'Valor do saque: '
     saque = gets.to_i
+    saques << saque 
     movimentos << "Saque realizado de: #{saque}"
-
+   
     if saldo < saque
       puts 'Valor insuficiente'
     else
