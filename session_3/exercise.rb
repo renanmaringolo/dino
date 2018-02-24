@@ -48,13 +48,18 @@ def calcula_saldo(depositos, saques)
   soma_depositos = 0
   soma_saques = 0
   
-  for deposito in depositos
-    soma_depositos = soma_depositos + deposito
-  end
 
-  for saque in saques
-    soma_saques = soma_saques + saque
-  end
+
+depositos.each { |deposito| soma_depositos = soma_depositos + deposito }
+saques.each { |saque| soma_saques = soma_saques + saque }
+  
+  #for deposito in depositos
+  #  soma_depositos = soma_depositos + deposito
+  #end
+
+ # for saque in saques
+  #  soma_saques = soma_saques + saque
+  #end
 
   soma_depositos - soma_saques
 end    
