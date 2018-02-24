@@ -45,13 +45,16 @@ depositos = []
 
 
 def calcula_saldo(depositos, saques)
-  soma_depositos = 0
-  soma_saques = 0
+#  soma_depositos = 0
+#  soma_saques = 0
   
 
+### Inject
+soma_depositos = depositos.inject(0) { |acc, deposito| acc + deposito }
+soma_saques = saques.inject(0) { |acc, saque| acc + saque }
 
-depositos.each { |deposito| soma_depositos = soma_depositos + deposito }
-saques.each { |saque| soma_saques = soma_saques + saque }
+#depositos.each { |deposito| soma_depositos = soma_depositos + deposito }
+#saques.each { |saque| soma_saques = soma_saques + saque }
   
   #for deposito in depositos
   #  soma_depositos = soma_depositos + deposito
