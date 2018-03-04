@@ -33,12 +33,14 @@ class Banco
   def imprime_clientes
     @clientes.each do |cliente|
       puts "Nome: #{cliente.nome}"
+      # imprimir mais atirbutos do cliente. CLIENTE!!!
     end
   end
 end
 
 class Cliente
   def initialize(nome, cpf)
+    # receber outros atributos: rg, etc
     @nome = nome
     @cpf = cpf
   end
@@ -52,6 +54,7 @@ class Cliente
   end
 end
 
+# adicionar mais argumentos: rg, cidade, etc
 cliente_1 = Cliente.new('Renan', 123)
 cliente_2 = Cliente.new('Leandro', 456)
 cliente_3 = Cliente.new('Mara', 789)
