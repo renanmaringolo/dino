@@ -18,13 +18,20 @@ def login
   print 'Cidade: '
   cidade = gets.strip
 
-  print 'estado_civil: '
+  print 'Estado Civil: '
   estado_civil = gets.strip
 
   # MUDAR AQUI
   # receita dos dados da pessoa
   # propriedades: nome, email, cpf e rg
-  { nome: nome, email: email, cpf: cpf, rg: rg, cidade: cidade, estado_civil: estado_civil }
+  {
+    nome: nome,
+    email: email,
+    cpf: cpf,
+    rg: rg,
+    cidade: cidade,
+    estado_civil: estado_civil
+  }
 end
 
 def chama_menu
