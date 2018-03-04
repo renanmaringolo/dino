@@ -68,3 +68,5 @@ banco = Banco.new('Itau', 999, clientes)
 # Clientes do banco Itau
 puts "Clientes do banco #{banco.nome}: "
 banco.imprime_clientes
+
+# RESULTADO NO SCREEN: Nome, CPF, RG, Cidade, Estado Civil
