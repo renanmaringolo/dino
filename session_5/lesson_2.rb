@@ -12,22 +12,12 @@
 # RECEITA
 # def cria_banco => Banco
 class Banco
+  attr_reader :nome, :cnpj, :clientes
+
   def initialize(nome, cnpj, clientes)
     @nome = nome
     @cnpj = cnpj
     @clientes = clientes
-  end
-
-  def nome
-    @nome
-  end
-
-  def cnpj
-    @cnpj
-  end
-
-  def clientes
-    @clientes
   end
 
   def imprime_clientes
@@ -44,6 +34,8 @@ class Banco
 end
 
 class Cliente
+  attr_reader :nome, :cpf, :rg, :cidade, :estado_civil
+
   def initialize(nome, cpf, rg, cidade, estado_civil)
     # receber outros atributos: rg, etc
     @nome = nome
@@ -52,26 +44,6 @@ class Cliente
     @cidade = cidade
     @estado_civil = estado_civil
   end
-
-  def nome
-    @nome
-  end
-
-  def cpf
-    @cpf
-  end
-
-  def rg
-    @rg
-  end
-
-  def cidade
-    @cidade
-  end
-
-  def estado_civil
-    @estado_civil
-  end  
 end
 
 # adicionar mais argumentos: rg, cidade, etc
@@ -79,10 +51,6 @@ cliente_1 = Cliente.new('Renan', 123, 999, 'brasília', 'solteiro')
 cliente_2 = Cliente.new('Leandro', 456, 777, 'SP', 'casado')
 cliente_3 = Cliente.new('Mara', 789, 555, 'rj', 'divorciada')
 
-#clientes = []
-#clientes << cliente_1
-#clientes << cliente_1
-#clientes << cliente_1
 
 clientes = [cliente_1, cliente_2, cliente_3]
 
