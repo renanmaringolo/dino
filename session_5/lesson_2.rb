@@ -12,8 +12,8 @@
 # RECEITA
 # def cria_banco => Banco
 class Banco
-  attr_reader :nome, :cnpj, :clientes
-
+  attr_reader  :nome, :cnpj, :clientes
+    
   def initialize(nome, cnpj, clientes)
     @nome = nome
     @cnpj = cnpj
