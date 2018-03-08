@@ -11,15 +11,29 @@ class Funcionario
     @cpf = cpf
     @status = 'ativo'
   end
+
+  def muda_status(inativo)
+    @status = 'inativo'
+  end
+
+
 end
 
 # nao precisamos mandar o "status" como argumento, pois sempre que criar um
 # novo funcionario, ele já está ativo por padrão.
 funcionario_1 = Funcionario.new('Leandro', 123)
+funcionario_1.muda_status('Inativo')
+## eu havia pensado em criar uma variável e interpolar na linha 29, mas deu erro de indefinição de método.
+## Aí eu apenas chamei funcionario_1 com o novo método criado e interpolei na linha 29 a mesma propriedade.
+## Só que, se o Leandro voltar para a propriedade anterior? Tem alguma instrução que permite..
+## essa flexibilidade?
+
+
+
 
 # Funcionario: Leandro está ativo
 puts "Funcionario: #{funcionario_1.nome} está #{funcionario_1.status}"
-
+#puts "Funcionario: #{funcionario_1.nome} está #{funcionario_1.muda_status}"
 # No caso do funcionário ser demitido, como fazemos pra deixá-lo "inativo"?
 # Precisamos, de alguma forma, MUDAR o atributo "status". Como o Ruby não permite
 # manipular o atributo diretamente (só através de métodos), então temos
