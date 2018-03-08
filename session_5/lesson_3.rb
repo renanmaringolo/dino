@@ -12,10 +12,9 @@ class Funcionario
     @status = 'ativo'
   end
 
-  def muda_status(inativo)
-    @status = 'inativo'
+  def muda_status(novo_status)
+    @status = novo_status
   end
-
 
 end
 
@@ -23,12 +22,6 @@ end
 # novo funcionario, ele já está ativo por padrão.
 funcionario_1 = Funcionario.new('Leandro', 123)
 funcionario_1.muda_status('Inativo')
-## eu havia pensado em criar uma variável e interpolar na linha 29, mas deu erro de indefinição de método.
-## Aí eu apenas chamei funcionario_1 com o novo método criado e interpolei na linha 29 a mesma propriedade.
-## Só que, se o Leandro voltar para a propriedade anterior? Tem alguma instrução que permite..
-## essa flexibilidade?
-
-
 
 
 # Funcionario: Leandro está ativo
