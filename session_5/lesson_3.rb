@@ -21,11 +21,14 @@ end
 # nao precisamos mandar o "status" como argumento, pois sempre que criar um
 # novo funcionario, ele já está ativo por padrão.
 funcionario_1 = Funcionario.new('Leandro', 123)
-funcionario_1.muda_status('Inativo')
-
 
 # Funcionario: Leandro está ativo
 puts "Funcionario: #{funcionario_1.nome} está #{funcionario_1.status}"
+
+
+funcionario_1.muda_status('Inativo')
+
+
 #puts "Funcionario: #{funcionario_1.nome} está #{funcionario_1.muda_status}"
 # No caso do funcionário ser demitido, como fazemos pra deixá-lo "inativo"?
 # Precisamos, de alguma forma, MUDAR o atributo "status". Como o Ruby não permite
@@ -43,4 +46,4 @@ puts "Funcionario: #{funcionario_1.nome} está #{funcionario_1.status}"
 # funcionario_1.muda_status('inativo') # demitiram o Leandro, coitado...
 #
 # A linha abaixo, se estiver descomentada, deve imprimir: Funcionario: Leandro está inativo
-# puts "Funcionario: #{funcionario_1.nome} está #{funcionario_1.status}"
+puts "Funcionario: #{funcionario_1.nome} está #{funcionario_1.status}"
