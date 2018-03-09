@@ -1,12 +1,22 @@
 # Banco Dinossauro
 
-#class Cliente
-#end
+class Cliente
+
+  attr_accessor :nome, :cpf, :rg, :data_nascimento, :email, :cidade
+  
+  def initialize(nome, cpf, rg, data_nascimento, email, cidade) 
+    @nome = nome
+    @cpf = cpf
+    @rg = rg
+    @data_nascimento = data_nascimento
+    @email = email
+    @cidade = cidade
+  end
+end
+  
 
 def login
   puts '====== BANCO DINOSSAURO ======'
-  print 'Digite seu email: '
-  email = gets.strip
 
   print 'Digite seu nome: '
   nome = gets.strip
@@ -16,27 +26,21 @@ def login
 
   print 'RG: '
   rg = gets.strip
+  
+  print 'Data de nascimento: '
+  data_nascimento = gets.strip  
+  
+  print 'Digite seu email: '
+  email = gets.strip
 
   print 'Cidade: '
   cidade = gets.strip
 
-  print 'Estado Civil: '
-  estado_civil = gets.strip
+Cliente.new(nome, cpf, rg, data_nascimento, email, cidade)
 
-  # MUDAR AQUI PARA RETORNAR OBJETO. Crie a classe Cliente la em cima
-  # dica: lesson_2.rb
-
-  #{
-  #  nome: nome,
-  #  email: email,
-  #  cpf: cpf,
-  #  rg: rg,
-  #  cidade: cidade,
-  #  estado_civil: estado_civil
-  #}
-
-  # deve retornar Cliente.new(nome, email, etc) -> ultima linha
 end
+
+
 
 def chama_menu
   puts '====== BANCO DINOSSAURO ======'
@@ -60,8 +64,12 @@ def calcula_saldo(depositos, saques)
 end
 
 cliente = login # produziu um "bolo" da receita (objeto)
-# cliente.nome
-# cliente.cpf etc
+#cliente.nome
+#cliente.cpf
+#cliente.rg
+#cliente.data_nascimento
+#cliente.email
+#cliente.cidade
 
 identificador = '3BN98FDS'
 opcao = chama_menu
@@ -98,5 +106,5 @@ while opcao != 0 do
 end
 
 # MUDAR A PARTIR DAQUI
-nome = dados_da_pessoa[:nome] # mudar para cliente.nome
-puts "Sessão encerrada às #{Time.now}, obrigado, #{nome}, por confiar no Dino Bank S/A"
+
+puts "Sessão encerrada às #{Time.now}, obrigado, #{cliente.nome}, por confiar no Dino Bank S/A" # Ou colocar dir
