@@ -2,7 +2,7 @@
 
 class Cliente
 
-  attr_accessor :nome, :cpf, :rg, :data_nascimento, :email, :cidade
+  attr_reader :nome, :cpf, :rg, :data_nascimento, :email, :cidade
   
   def initialize(nome, cpf, rg, data_nascimento, email, cidade) 
     @nome = nome
@@ -36,7 +36,7 @@ def login
   print 'Cidade: '
   cidade = gets.strip
 
-Cliente.new(nome, cpf, rg, data_nascimento, email, cidade)
+  Cliente.new(nome, cpf, rg, data_nascimento, email, cidade)
 
 end
 
@@ -64,12 +64,6 @@ def calcula_saldo(depositos, saques)
 end
 
 cliente = login # produziu um "bolo" da receita (objeto)
-#cliente.nome
-#cliente.cpf
-#cliente.rg
-#cliente.data_nascimento
-#cliente.email
-#cliente.cidade
 
 identificador = '3BN98FDS'
 opcao = chama_menu
