@@ -31,13 +31,24 @@ class Terminal
   def login(banco)
     puts "====== Banco #{banco.nome} ======"
 
-    print 'Digite seu nome: '
-    nome = gets.strip
-
-    print 'CPF: '
+    print 'Digite seu CPF: '
     cpf = gets.strip
 
-    Cliente.new(nome, cpf)
+    # Cliente.new | nil
+    cliente = @clientes_dao.busca_por_cpf(cpf)
+
+    if cliente.nil?
+      print 'Cliente não encontrado. Deseja cadastrar? (y/n): '
+      escolha = gets.strip
+      return nil if escolha != 'y'
+
+      print 'Digite seu nome: '
+      nome = gets.strip
+
+      # dica do insere: File.open no modo append
+      # Cliente.new
+      @clientes_dao.insere(cpf, nome)
+    end
   end
 
   def operacoes(banco)
