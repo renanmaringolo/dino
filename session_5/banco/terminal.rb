@@ -1,5 +1,5 @@
 require_relative './cliente.rb'
-require_relative './banco.rb'
+require_relative './bancos_dao.rb'
 
 #### 5 metodos
 # conectar => Banco | nil
@@ -13,27 +13,19 @@ class Terminal
 
   def initialize
     @identificador = 'BLAH123' # depois a gente gera um valor aleatorio
+    @bancos_dao = BancosDAO.new
   end
 
   def conectar
-    bancos = {
-      '1' => { nome: 'Dinossauro Bank S/A', display: '1. Dinossauro Bank S/A' },
-      '2' => { nome: 'Banco Itaú', display: '2. Banco Itaú' },
-      '3' => { nome: 'Banco Bradesco', display: '3. Banco Bradesco' }
-    }
-
     puts '===== Bem-vindo ao terminal 24horas ====='
     puts 'Trabalhamos com os seguinte bancos'
-    displays = bancos.values.map { |value| value[:display] }
-    puts displays
+    puts @bancos_dao.displays
+
     print 'Escolha seu banco: '
-    opcao_banco = bancos[gets.strip]
+    digitado = gets.strip
 
-    if opcao_banco == nil
-      return nil
-    end
-
-    Banco.new(opcao_banco[:nome])
+    # Banco.new | nil
+    @bancos_dao.busca_por_codigo(digitado)
   end
 
   def login(banco)
