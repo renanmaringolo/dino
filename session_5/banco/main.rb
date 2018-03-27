@@ -19,6 +19,8 @@ end
 # faz login no banco com dados do cliente
 cliente = terminal.login(banco)
 
+exit if cliente == nil
+
 # bloqueia execução do main por causa do while lá dentro.
 # apenas desbloqueia quando a opção for zero.
 # realiza múltiplas operações (saque, deposito, extrato, etc)

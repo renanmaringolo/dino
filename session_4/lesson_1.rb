@@ -4,7 +4,7 @@
 # de strings. exemplo:
 
 saques = []
-time = '26/02/2018 às 10:42'
+time = Time.now
 saque = 200
 
 # neste exemplo utilizamos o pipe (|) para separar os valores na string.

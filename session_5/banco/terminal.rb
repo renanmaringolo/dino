@@ -1,5 +1,6 @@
 require_relative './cliente.rb'
 require_relative './bancos_dao.rb'
+require_relative './clientes_dao.rb'
 
 #### 5 metodos
 # conectar => Banco | nil
@@ -14,6 +15,7 @@ class Terminal
   def initialize
     @identificador = 'BLAH123' # depois a gente gera um valor aleatorio
     @bancos_dao = BancosDAO.new
+    @clientes_dao = ClientesDAO.new
   end
 
   def conectar
@@ -24,7 +26,6 @@ class Terminal
     print 'Escolha seu banco: '
     digitado = gets.strip
 
-    # Banco.new | nil
     @bancos_dao.busca_por_codigo(digitado)
   end
 
@@ -34,7 +35,6 @@ class Terminal
     print 'Digite seu CPF: '
     cpf = gets.strip
 
-    # Cliente.new | nil
     cliente = @clientes_dao.busca_por_cpf(cpf)
 
     if cliente.nil?
@@ -45,10 +45,9 @@ class Terminal
       print 'Digite seu nome: '
       nome = gets.strip
 
-      # dica do insere: File.open no modo append
-      # Cliente.new
-      @clientes_dao.insere(cpf, nome)
+      cliente = @clientes_dao.insere(cpf, nome)
     end
+    cliente      
   end
 
   def operacoes(banco)

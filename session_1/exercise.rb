@@ -36,12 +36,12 @@ puts(sobrenome) # deve ser Proenca, nao pode mudar!
 ######
 
 # seu codigo aqui
-def soma(n1, n2)
-  n1 + n2
+def soma(n1, n2, n3)
+  n1 + n2 + n3
 end
 
-soma(1, 2)
+soma(1, 2, 3)
 
 ###### NAO MEXER #######
-puts soma(1, 2) ##deve ser 3
+puts soma(1, 2, 3) ##deve ser 3
 puts soma(4, 5)
