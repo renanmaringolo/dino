@@ -24,6 +24,6 @@ exit if cliente == nil
 # bloqueia execução do main por causa do while lá dentro.
 # apenas desbloqueia quando a opção for zero.
 # realiza múltiplas operações (saque, deposito, extrato, etc)
-terminal.operacoes(banco) # retorna nada
-
+terminal.operacoes(banco, cliente)
+ 
 puts "Sessão encerrada às #{Time.now}, obrigado, #{cliente.nome}, por confiar no #{banco.nome}" # Ou colocar dir

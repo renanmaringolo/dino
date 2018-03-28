@@ -50,7 +50,7 @@ class Terminal
     cliente      
   end
 
-  def operacoes(banco)
+  def operacoes(banco, cliente)
     opcao = menu(banco)
     movimentos = []
     saques = []
@@ -61,6 +61,7 @@ class Terminal
         print 'Valor do depósito: '
         deposito = gets.to_i
         depositos << deposito
+        File.open("session_5/banco/#{cliente.cpf}-depositos.txt", 'a') { |f| f.write("#{deposito}\n") }
         movimentos << "Depósito realizado de: #{deposito}, às #{Time.now}, no terminal: #{identificador}"
       elsif opcao == 2
         saldo = calcula_saldo(depositos, saques)
@@ -71,6 +72,7 @@ class Terminal
           puts 'Valor insuficiente'
         else
           saques << saque
+          File.open("session_5/banco/#{cliente.cpf}-saques.txt", 'a') { |f| f.write("#{saque}\n") }
           movimentos << "Saque realizado de: #{saque}, às #{Time.now}, no terminal: #{identificador}"
         end
       elsif opcao == 3
