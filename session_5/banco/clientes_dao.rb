@@ -3,7 +3,7 @@ require_relative './cliente.rb'
 class ClientesDAO
 
   def initialize
-    file = File.read('session_5/banco/clientes.txt')
+    file = File.read('session_5/banco/database/clientes.txt')
     @linhas = file.split("\n")
   end
 
@@ -14,7 +14,7 @@ class ClientesDAO
   end
 
   def insere(cpf, nome)
-    File.open('session_5/banco/clientes.txt', 'a') { |f| f.write("#{cpf}|#{nome}\n") }
+    File.open('session_5/banco/database/clientes.txt', 'a') { |f| f.write("#{cpf}|#{nome}\n") }
     Cliente.new(nome, cpf)
   end  
 end

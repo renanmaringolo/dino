@@ -5,7 +5,7 @@ class BancosDAO
 
   def initialize
     # 237|Itau\n341|Bradesco\n
-    file = File.read('session_5/banco/bancos.txt')
+    file = File.read('session_5/banco/database/bancos.txt')
     @linhas = file.split("\n")
   end
 
