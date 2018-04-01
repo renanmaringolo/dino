@@ -61,7 +61,7 @@ class Terminal
         print 'Valor do depósito: '
         deposito = gets.to_i
         depositos << deposito
-        File.open("session_5/banco/database/#{cliente.cpf}-depositos.txt", 'a') { |f| f.write("#{deposito}|#{Time.now}\n") }
+        File.open("session_5/banco/database/depositos_clientes/#{cliente.cpf}-depositos.txt", 'a') { |f| f.write("#{deposito}|#{Time.now}\n") }
         movimentos << "Depósito realizado de: #{deposito}, às #{Time.now}, no terminal: #{identificador}"
       elsif opcao == 2
         saldo = calcula_saldo(depositos, saques)
@@ -72,7 +72,7 @@ class Terminal
           puts 'Valor insuficiente'
         else
           saques << saque
-          File.open("session_5/banco/database/#{cliente.cpf}-saques.txt", 'a') { |f| f.write("#{saque}|#{Time.now}\n") }
+          File.open("session_5/banco/database/saques_clientes/#{cliente.cpf}-saques.txt", 'a') { |f| f.write("#{saque}|#{Time.now}\n") }
           movimentos << "Saque realizado de: #{saque}, às #{Time.now}, no terminal: #{identificador}"
         end
       elsif opcao == 3
