@@ -52,18 +52,32 @@ class Terminal
 
   def operacoes(banco, cliente)
     opcao = menu(banco)
-    movimentos = []
-    saques = []
-    depositos = []
 
     while opcao != 0 do
       if opcao == 1
         print 'Valor do depósito: '
         deposito = gets.to_i
-        depositos << deposito
-        File.open("session_5/banco/database/depositos_clientes/#{cliente.cpf}-depositos.txt", 'a') { |f| f.write("#{deposito}|#{Time.now}\n") }
-        movimentos << "Depósito realizado de: #{deposito}, às #{Time.now}, no terminal: #{identificador}"
+        File.open("session_5/banco/database/movimentos/#{cliente.cpf}.txt", 'a') { |f| f.write("d|#{deposito}|#{Time.now}\n") }
+
       elsif opcao == 2
+        depositos = []
+        saques = []
+        if !File.exists?("session_5/banco/database/movimentos/#{cliente.cpf}.txt")
+          File.open("session_5/banco/database/movimentos/#{cliente.cpf}.txt", 'w')
+        end
+        File.open("session_5/banco/database/movimentos/#{cliente.cpf}.txt").each_line do |line|
+          valores = line.chop.split('|')
+          tipo = valores[0]
+          movimento = valores[1].to_i
+          if tipo == 's'
+            saques << movimento
+          else
+            depositos << movimento
+          end
+        end
+        ## se o arquivo nao existe open no modo write
+        ##Ler o arquivo de saques e depositos e jogar nos devidos arrays passando pro CALCULA_SALDO
+        ##precisarei de 2 arrays(s,d)
         saldo = calcula_saldo(depositos, saques)
         print 'Valor do saque: '
         saque = gets.to_i
@@ -71,16 +85,36 @@ class Terminal
         if saldo < saque
           puts 'Valor insuficiente'
         else
-          saques << saque
-          File.open("session_5/banco/database/saques_clientes/#{cliente.cpf}-saques.txt", 'a') { |f| f.write("#{saque}|#{Time.now}\n") }
-          movimentos << "Saque realizado de: #{saque}, às #{Time.now}, no terminal: #{identificador}"
+          File.open("session_5/banco/database/movimentos/#{cliente.cpf}.txt", 'a') { |f| f.write("s|#{saque}|#{Time.now}\n") }
         end
       elsif opcao == 3
+        depositos = []
+        saques = []
+        movimentos = []
+        if !File.exists?("session_5/banco/database/movimentos/#{cliente.cpf}.txt")
+          File.open("session_5/banco/database/movimentos/#{cliente.cpf}.txt", 'w')
+        end
+        File.open("session_5/banco/database/movimentos/#{cliente.cpf}.txt").each_line do |line|
+          valores = line.chop.split('|')
+          tipo = valores[0]
+          movimento = valores[1].to_i
+          data = valores[2]
+         
+          if tipo == 's'
+            saques << movimento
+            movimentos << "Saque realizado de #{movimento} às #{data}"
+          else
+            depositos << movimento
+            movimentos << "Depósito realizado de #{movimento} às #{data}"
+          end
+        end
+        ## se o arquivo nao existe open no modo write
+        ## ler o arquivo de saques e depositos e jogar nos devidos arrays passando pro CALCULA_SALDO.
+        ## precisarei de 3 arrays (s,d,m)
         saldo = calcula_saldo(depositos, saques)
         puts movimentos
         puts "Seu saldo atual é de: #{saldo}"
       end
-
       opcao = menu(banco)
     end
   end
