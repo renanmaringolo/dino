@@ -11,10 +11,18 @@ class BanksDAO
     @lines.map { |line| line.gsub('|', '. ') }
   end
 
+  def list_all
+    @lines.map do |line|
+      code, name = line.split('|')
+      Bank.new(code, name)
+    end
+  end
+
   def search_for_code(code)
     line = @lines.detect { |line| line.split('|')[0] == code }
     return nil if line == nil
 
-    Bank.new(line.split('|')[1])
+    code, name = line.split('|')
+    Bank.new(code, name)
   end
 end
