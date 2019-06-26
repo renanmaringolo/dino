@@ -37,7 +37,3 @@ else
 
 end
   
-
-#### Resultado esperado ####
-# A média é 8
-
